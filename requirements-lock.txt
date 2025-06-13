@@ -1,0 +1,35 @@
+# Exact versions for reproducible builds
+# Generated for PA Form Automation Pipeline
+
+# Core AI/ML Libraries
+google-generativeai==0.8.3
+mistralai==1.2.3
+
+# PDF Processing
+PyMuPDF==1.24.10
+
+# Environment and Configuration  
+python-dotenv==1.0.1
+
+# HTTP and Networking (dependency for AI libraries)
+httpx==0.27.2
+h11==0.14.0
+certifi==2024.8.30
+
+# JSON and Data Processing
+typing-extensions==4.12.2
+
+# Jupyter Environment
+jupyter==1.1.1
+notebook==7.2.2
+ipykernel==6.29.5
+
+# Optional but recommended
+pandas==2.2.3
+numpy==1.26.4
+pillow==10.4.0
+
+# Development tools
+black==24.8.0
+flake8==7.1.1
+pytest==8.3.3
