@@ -39,7 +39,7 @@ def install_requirements():
         
         # Install requirements
         subprocess.check_call([
-            sys.executable, "-m", "pip", "install", "-r", "requirements.txt"
+            sys.executable, "-m", "pip", "install", "-r", str(requirements_file)
         ])
         
         print("✅ Dependencies installed successfully!")
@@ -54,7 +54,6 @@ def verify_installation():
     # Dictionary mapping import names to their actual package names for clarity
     packages_to_check = {
         "google.generativeai": "google-generativeai",
-        "mistralai": "mistralai", 
         "fitz": "PyMuPDF",  # fitz is the import name for PyMuPDF package
         "dotenv": "python-dotenv"
     }
@@ -79,9 +78,6 @@ def create_env_file():
     template_content = """# API Keys for PA Form Automation Pipeline
 # Get Google API key from: https://aistudio.google.com/app/apikey  
 GOOGLE_API_KEY=your_google_gemini_api_key_here
-
-# Get Mistral API key from: https://console.mistral.ai/
-MISTRAL_API_KEY=your_mistral_api_key_here
 
 # Optional configuration
 DEBUG=False
@@ -125,7 +121,7 @@ def main():
     print("📋 Next steps:")
     print("   1. Add your API keys to .env file")
     print("   2. Place PDF files in Input Data/ folder")
-    print("   3. Run the automation notebook")
+    print("   3. Run the automation script")
     print("=" * 50)
 
 if __name__ == "__main__":
