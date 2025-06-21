@@ -92,29 +92,28 @@ mandolin-project/
 
 ### Quick Setup
 
-1. **Clone and Navigate**
+1. **Clone the Repository**
    ```bash
    git clone <repository-url>
    cd mandolin-project
    ```
 
-2. **Run Setup Script**
+2. **Run the Setup Script**
    ```bash
    python setup.py
    ```
-   This will:
+   This script will:
    - Check Python version compatibility
    - Install all required dependencies
-   - Create environment file templates
-   - Verify installation
+   - Create environment variable template files
+   - Verify the installation
 
 3. **Configure API Keys**
    - Copy `.env.template` to `.env`
-   - Add your API keys:
-   ```env
-   GOOGLE_API_KEY=your_google_gemini_api_key_here
-   MISTRAL_API_KEY=your_mistral_api_key_here
-   ```
+   - Add your API key:
+     ```env
+     GOOGLE_API_KEY=your_google_gemini_api_key_here
+     ```
 
 ### Manual Installation
 
@@ -126,7 +125,7 @@ pip install -r Requirements/requirements.txt
 
 # Create environment file
 cp .env.template .env
-# Edit .env with your API keys
+# Edit .env with your API key
 ```
 
 ## 💻 Usage
@@ -135,7 +134,7 @@ cp .env.template .env
 
 The main automation pipeline is implemented in `automation_script.ipynb`:
 
-1. **Open Jupyter Notebook**
+1. **Open the Jupyter Notebook**
    ```bash
    jupyter notebook automation_script.ipynb
    ```
@@ -145,9 +144,9 @@ The main automation pipeline is implemented in `automation_script.ipynb`:
    - Monitor progress and outputs in real-time
 
 3. **Process Custom Data**
-   - Place your PA forms and referral packages in `Input Data/` folder
+   - Place your PA forms and referral packages in the `Input Data/` folder
    - Structure: `Input Data/PatientName/PA.pdf` and `referral_package.pdf`
-   - Modify the file paths in the notebook accordingly
+   - Update file paths in the notebook as needed
 
 ### Input Data Structure
 
@@ -171,7 +170,17 @@ For each patient, the pipeline generates:
 1. **Filled PA Form** (`patient_name_filled_PA.pdf`)
    - Original form with appropriate fields populated
    - Maintains original formatting and appearance
-   - Only fills fields with confidence and logical consistency
+   - Only fills fields with high confidence and logical consistency
+
+2. **Missing Information Report** (`patient_name_missing_info.txt`)
+   - Lists required fields that couldn't be filled
+   - Explains why information was unavailable
+   - Suggests additional documentation needed
+
+3. **Processing Log**
+   - Detailed extraction results
+   - Field mapping decisions
+   - Error handling and recovery actions
 
 2. **Missing Information Report** (`patient_name_missing_info.txt`)
    - Lists required fields that couldn't be filled
