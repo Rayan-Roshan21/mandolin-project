@@ -23,7 +23,7 @@ An intelligent automation system that uses AI models to extract information from
 
 ### Core Components
 
-1. **OCR Engine** (Mistral OCR Latest)
+1. **OCR Engine** (Gemini Flash Model)
    - Processes scanned referral package documents
    - Extracts text from high-resolution medical images
    - Handles complex document layouts and medical terminology
@@ -51,7 +51,7 @@ An intelligent automation system that uses AI models to extract information from
 ### Data Flow
 
 ```
-Referral Package (PDF) → Mistral OCR → Structured Text
+Referral Package (PDF) → Gemini Model with prompt → Structured Text
                                           ↓
 PA Form (PDF) → Form Analysis → Field Coordinates & Types
                                           ↓
@@ -88,7 +88,6 @@ mandolin-project/
 
 - Python 3.8 or higher
 - Google AI Studio API key ([Get here](https://aistudio.google.com/app/apikey))
-- Mistral API key ([Get here](https://console.mistral.ai/))
 
 ### Quick Setup
 
@@ -201,11 +200,9 @@ For each patient, the pipeline generates:
 - Form field analysis and coordinate detection  
 - Intelligent field mapping and value assignment
 - Handles complex medical terminology and abbreviations
-
-**Mistral OCR Latest**
 - High-accuracy text extraction from scanned documents
 - Optimized for medical document layouts
-- Handles poor quality faxes and scanned images
+- Handles poor-quality faxes and scanned images
 
 ### Key Algorithms
 
